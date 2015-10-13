@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% set htmllang=app.request.locale|lower|slice(0, 2) %}
+<!--[if lte IE 7]> <html class="no-js ie67 ie678" xml:lang="{{ htmllang }}" lang="{{ htmllang }}"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 ie678" xml:lang="{{ htmllang }}" lang="{{ htmllang }}"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie9" xml:lang="{{ htmllang }}" lang="{{ htmllang }}"> <![endif]-->
+<!--[if gt IE 9]> <!--><html class="no-js" xml:lang="{{ htmllang }}" lang="{{ htmllang }}"> <!--<![endif]-->
+<head>
+    {% block page_head %}
+        {% include 'EdgarEzLayoutBundle:pagelayout:head.html.twig' %}
+    {% endblock %}
+</head>
+<body class="">
+    {% block page_header %}
+        {% include 'EdgarEzLayoutBundle:pagelayout:header.html.twig' %}
+    {% endblock %}
+
+    {% block page_aside %}
+        {% include 'EdgarEzLayoutBundle:pagelayout:aside.html.twig' %}
+    {% endblock %}
+
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+
+    {% block page_footer %}
+        {% include 'EdgarEzLayoutBundle:pagelayout:footer.html.twig' %}
+    {% endblock %}
+</body>
+</html>
